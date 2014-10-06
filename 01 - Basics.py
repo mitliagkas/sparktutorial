@@ -1,7 +1,11 @@
 
 # coding: utf-8
 
-### A Spark context should already have been created
+### https://github.com/mitliagkas/sparktutorial
+
+### Start `pyspark`.
+
+#### A Spark context should already have been created
 
 #### The context gives us access to all the Spark functionality
 
@@ -19,7 +23,7 @@ sc
 local_data = range(100)
 
 
-##### `parallelize()` makes an RDD out of our local data 
+##### `parallelize()` makes a Resilient Distributed Dataset (RDD) out of our local data 
 
 # In[3]:
 
@@ -34,6 +38,16 @@ distributed_data
 # 
 # Use python lambdas for anonymous functions.
 
+# In[5]:
+
+def isodd(x):
+    return x % 2 == 1
+
+odds = distributed_data.filter( isodd )
+
+
+# Alternatively:
+
 # In[4]:
 
 odds = distributed_data.filter(
@@ -43,7 +57,7 @@ odds = distributed_data.filter(
 
 # No actual computation has happened yet. We're **just describing transformations**.
 
-# In[8]:
+# In[6]:
 
 print odds.toDebugString()
 
@@ -52,14 +66,19 @@ print odds.toDebugString()
 
 # **Lazy calculation**: Spark will only run jobs and calculate stuff just now. 
 
-# In[9]:
+# In[7]:
 
 odds.sum()
 
 
 ##### Another action: `take()`
 
-# In[10]:
+# In[8]:
 
 distributed_data.take(10)
+
+
+# In[ ]:
+
+
 

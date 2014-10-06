@@ -1680,7 +1680,27 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="A-Spark-context-should-already-have-been-created">A Spark context should already have been created<a class="anchor-link" href="#A-Spark-context-should-already-have-been-created">&#182;</a></h2>
+<h2 id="https://github.com/mitliagkas/sparktutorial">https://github.com/mitliagkas/sparktutorial<a class="anchor-link" href="#https://github.com/mitliagkas/sparktutorial">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Start-pyspark.">Start <code>pyspark</code>.<a class="anchor-link" href="#Start-pyspark.">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="A-Spark-context-should-already-have-been-created">A Spark context should already have been created<a class="anchor-link" href="#A-Spark-context-should-already-have-been-created">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -1719,7 +1739,7 @@ In&nbsp;[1]:
 
 <div class="output_text output_subarea output_pyout">
 <pre>
-&lt;pyspark.context.SparkContext at 0x7fe3c204dfd0&gt;
+&lt;pyspark.context.SparkContext at 0x7f877f39cf50&gt;
 </pre>
 </div>
 
@@ -1769,7 +1789,7 @@ In&nbsp;[2]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="parallelize()-makes-an-RDD-out-of-our-local-data"><code>parallelize()</code> makes an RDD out of our local data<a class="anchor-link" href="#parallelize()-makes-an-RDD-out-of-our-local-data">&#182;</a></h4>
+<h4 id="parallelize()-makes-a-Resilient-Distributed-Dataset-(RDD)-out-of-our-local-data"><code>parallelize()</code> makes a Resilient Distributed Dataset (RDD) out of our local data<a class="anchor-link" href="#parallelize()-makes-a-Resilient-Distributed-Dataset-(RDD)-out-of-our-local-data">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -1841,6 +1861,33 @@ ParallelCollectionRDD[0] at parallelize at PythonRDD.scala:286
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
+In&nbsp;[5]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">isodd</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span>
+
+<span class="n">odds</span> <span class="o">=</span> <span class="n">distributed_data</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span> <span class="n">isodd</span> <span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Alternatively:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
 In&nbsp;[4]:
 </div>
 <div class="inner_cell">
@@ -1867,7 +1914,7 @@ In&nbsp;[4]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[8]:
+In&nbsp;[6]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -1918,7 +1965,7 @@ PythonRDD[1] at RDD at PythonRDD.scala:37 (8 partitions)
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[9]:
+In&nbsp;[7]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -1934,7 +1981,7 @@ In&nbsp;[9]:
 
 
 <div class="output_area"><div class="prompt output_prompt">
-    Out[9]:</div>
+    Out[7]:</div>
 
 
 <div class="output_text output_subarea output_pyout">
@@ -1962,7 +2009,7 @@ In&nbsp;[9]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[10]:
+In&nbsp;[8]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -1978,7 +2025,7 @@ In&nbsp;[10]:
 
 
 <div class="output_area"><div class="prompt output_prompt">
-    Out[10]:</div>
+    Out[8]:</div>
 
 
 <div class="output_text output_subarea output_pyout">
@@ -1989,6 +2036,21 @@ In&nbsp;[10]:
 
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre> 
+</pre></div>
+
+</div>
 </div>
 </div>
 
